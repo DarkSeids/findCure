@@ -1,8 +1,6 @@
 <?php
-$connection = mysqli_connect("localhost",'root','','football');
+$connection = new mysqli("localhost", 'root', '', 'footbal');
 
-if (!$connection) {
-	die('unable to connection'. mysqly_error('$connection')); // checking database connection // 
+if ($connection->connect_error) {
+	die('unable to connection' . $connection->connect_error); // checking database connection // 
 }
-
-?>
